@@ -12,6 +12,7 @@ namespace timesheet.model
         [Key]
         public int Id { get; set; }
         
+        [Index("Ix_Name",IsUnique:true)]
         [StringLength(255)]
         [Required]
         public string Name { get; set; }

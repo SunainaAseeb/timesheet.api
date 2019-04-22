@@ -17,5 +17,13 @@ namespace timesheet.business
         {
             return this.db.Employees;
         }
+        public IQueryable<Task> GetTasks()
+        {
+            return this.db.Tasks;
+        }
+        public IQueryable<TimeDetails> GetTimedetails()
+        {
+            return this.db.TimeDetails;
+        }
     }
 }

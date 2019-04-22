@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 
 namespace timesheet.model
 {
@@ -10,6 +11,9 @@ namespace timesheet.model
         [Key]
         public int Id { get; set; }
 
+        //Employee Code will always be Unique;used as
+        //foreign key in Timesheet data object
+        [Index("IxCode",IsUnique:true)]
         [StringLength(10)]
         [Required]
         public string Code { get; set; }
