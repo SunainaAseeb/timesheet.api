@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -19,7 +19,7 @@ namespace timesheet.api.controllers
         }
 
         [HttpGet("getall")]
-        public IActionResult GetAll(string text)
+        public IActionResult GetAll(string text)//sunaina
         {
             var items = this.employeeService.GetEmployees();
             return new ObjectResult(items);
