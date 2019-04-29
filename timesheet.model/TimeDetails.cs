@@ -11,11 +11,13 @@ namespace timesheet.model
         [Key]
         public int Id { get; set; }
 
-        public int empId { get; set; }
+        [Column("Code")]
+        public int Code { get; set; }
         [ForeignKey("Code")]
         public Employee Employee { get; set; }
 
-        public int TaskName { get; set; }
+        
+        public int Name { get; set; }
         [ForeignKey("Name")]
         public Task Task { get; set; }
 
@@ -24,7 +26,7 @@ namespace timesheet.model
         public int Tuesday { get; set; }
         public int Wednesday { get; set; }
         public int Thursday { get; set; }
-        public int Friday { get; set; }
+        public int Friday { get; set; } 
         public int Saturday { get; set; }
     }
 }
