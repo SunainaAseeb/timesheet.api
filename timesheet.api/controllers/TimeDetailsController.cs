@@ -25,7 +25,16 @@ namespace timesheet.api.controllers
         [HttpGet]
         public IEnumerable<TimeDetails> GetTimeDetails()
         {
-            return _context.TimeDetails;
+            var td = _context.TimeDetails.Include(p => p.Employee).Include(p => p.Task).ToList();
+            return td;
+           // return _context.TimeDetails;
+        }
+        [HttpGet("{code}")]
+        public IEnumerable<TimeDetails> GetTimeDetails(string code)
+        {
+            var td = _context.TimeDetails.Include(p => p.Employee).Include(p => p.Task).Where(p=>p.Employee.Code == code).ToList();
+            return td;
+            
         }
 
         // GET: api/TimeDetails/5
